@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #b31217, #000000);
+    padding: 10px;
+}
+
+.card {
+    width: 350px;
+    height: 515px;
+    margin: 100px auto 0;
+    perspective: 1000px;
+   
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+              0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+.front {
+    background: url(images/spiderman.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+
+.front h2 {
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.front p {
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.front button {
+    width: 120px;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 50px;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: white;
+}
+
+.back {
+  padding: 20px 40px;
+  transform: rotateY(180deg);
+  border-radius: 15px;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #660000, #b30000);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease-in-out infinite;
+  color: #fff;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+.back h1 {
+    font-size: 50px;
+    line-height: 55px;
+    margin-bottom: 10px;
+}
+
+.back p {
+    font-size: 14px;
+    color: white;
+}
+
+.back h2 {
+    color: white;
+}
+
+.back p span {
+    font-weight: 600;
+    color: #fff;
+}
+
+.back img {
+    width: 120px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.col {
+    flex: 1;
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    position: relative;
+}
+
+.col h2 {
+    font-size: 20px;
+}
+
+.col::after {
+    content: '';
+    width: 1.5px;
+    height: 20px;
+    background: #7800ad;
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.col:last-child::after {
+    display: none;
+}
+
+.col p {
+    margin-top: 5px;
+}
+
+.back button {
+    background: red;
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    margin-right: 15px;
+    box-shadow: 0 8px 10px rgba(231, 3, 3, 0.3);
+}
+
+.back a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    background-color: #f0f0f0; /* soft gray */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.back a i {
+    font-size: 25px;
+    color: #333;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+a i {
+  font-size: 40px;
+  color: black;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+
